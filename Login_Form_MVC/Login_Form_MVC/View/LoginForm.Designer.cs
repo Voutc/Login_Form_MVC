@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.lblName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbName = new System.Windows.Forms.TextBox();
+            this.txbSurname = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txvPass = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txbRetypePass = new System.Windows.Forms.TextBox();
             this.lblRetPass = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -55,19 +55,19 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
-            // textBox1
+            // txbName
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 22);
-            this.textBox1.TabIndex = 2;
+            this.txbName.Location = new System.Drawing.Point(145, 41);
+            this.txbName.Name = "txbName";
+            this.txbName.Size = new System.Drawing.Size(134, 22);
+            this.txbName.TabIndex = 2;
             // 
-            // textBox2
+            // txbSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 22);
-            this.textBox2.TabIndex = 4;
+            this.txbSurname.Location = new System.Drawing.Point(145, 69);
+            this.txbSurname.Name = "txbSurname";
+            this.txbSurname.Size = new System.Drawing.Size(134, 22);
+            this.txbSurname.TabIndex = 4;
             // 
             // lblSurname
             // 
@@ -78,13 +78,13 @@
             this.lblSurname.TabIndex = 3;
             this.lblSurname.Text = "Surname";
             // 
-            // textBox3
+            // txvPass
             // 
-            this.textBox3.Location = new System.Drawing.Point(145, 125);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '1';
-            this.textBox3.Size = new System.Drawing.Size(134, 22);
-            this.textBox3.TabIndex = 8;
+            this.txvPass.Location = new System.Drawing.Point(145, 125);
+            this.txvPass.Name = "txvPass";
+            this.txvPass.PasswordChar = '●';
+            this.txvPass.Size = new System.Drawing.Size(134, 22);
+            this.txvPass.TabIndex = 8;
             // 
             // lblPassword
             // 
@@ -95,12 +95,12 @@
             this.lblPassword.TabIndex = 7;
             this.lblPassword.Text = "Password";
             // 
-            // textBox4
+            // txbUsername
             // 
-            this.textBox4.Location = new System.Drawing.Point(145, 97);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(134, 22);
-            this.textBox4.TabIndex = 6;
+            this.txbUsername.Location = new System.Drawing.Point(145, 97);
+            this.txbUsername.Name = "txbUsername";
+            this.txbUsername.Size = new System.Drawing.Size(134, 22);
+            this.txbUsername.TabIndex = 6;
             // 
             // lblUsername
             // 
@@ -120,12 +120,13 @@
             this.lblWelcome.TabIndex = 9;
             this.lblWelcome.Text = "Welcome to Digital Management Software";
             // 
-            // textBox5
+            // txbRetypePass
             // 
-            this.textBox5.Location = new System.Drawing.Point(145, 153);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(134, 22);
-            this.textBox5.TabIndex = 11;
+            this.txbRetypePass.Location = new System.Drawing.Point(145, 153);
+            this.txbRetypePass.Name = "txbRetypePass";
+            this.txbRetypePass.PasswordChar = '●';
+            this.txbRetypePass.Size = new System.Drawing.Size(134, 22);
+            this.txbRetypePass.TabIndex = 11;
             // 
             // lblRetPass
             // 
@@ -138,21 +139,25 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Location = new System.Drawing.Point(15, 191);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(120, 27);
             this.btnLogin.TabIndex = 12;
             this.btnLogin.Text = "Είσοδος";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.Location = new System.Drawing.Point(145, 191);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 27);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Ακύρωση";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pctrLogin
             // 
@@ -172,19 +177,21 @@
             this.Controls.Add(this.pctrLogin);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txbRetypePass);
             this.Controls.Add(this.lblRetPass);
             this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txvPass);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txbUsername);
             this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txbSurname);
             this.Controls.Add(this.lblSurname);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbName);
             this.Controls.Add(this.lblName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form MVC";
             ((System.ComponentModel.ISupportInitialize)(this.pctrLogin)).EndInit();
             this.ResumeLayout(false);
@@ -195,15 +202,15 @@
         #endregion
 
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbName;
+        private System.Windows.Forms.TextBox txbSurname;
         private System.Windows.Forms.Label lblSurname;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txvPass;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbUsername;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txbRetypePass;
         private System.Windows.Forms.Label lblRetPass;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
